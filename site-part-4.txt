@@ -1,0 +1,85 @@
+ hosting set up</li>
+            </ul>
+            <div class="note">Third-party domain and hosting costs are separate. I'll handle the setup and look for sensible, well-reviewed options so you aren't paying me a markup just to keep your site online.</div>
+          </div>
+
+          <div class="included-card fade">
+            <h3>What happens after you say yes?</h3>
+            <div class="included-row"><strong>Domain</strong><span>Your web address, purchased through a third-party registrar at its normal cost.</span></div>
+            <div class="included-row"><strong>Hosting</strong><span>I handle the setup and help you choose an affordable, well-reviewed provider. You pay the provider directly.</span></div>
+            <div class="included-row"><strong>Turnaround</strong><span>Most projects can be ready to launch in roughly 3–5 days once I have what I need.</span></div>
+            <div class="included-row"><strong>Revisions</strong><span>We'll make the reasonable final changes needed to get the site where it should be.</span></div>
+            <div class="included-row"><strong>After launch</strong><span>Need something fixed later? You can reach out as needed, or put me on a simple retainer for ongoing help.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hosting">
+      <div class="container hosting-grid">
+        <div class="hosting-copy fade">
+          <span class="eyebrow">No hosting games</span>
+          <h2>I handle the technical stuff. You keep control.</h2>
+          <p>Your domain and hosting are simply the services that keep your website online. You pay those companies directly, at their normal price — they are not extra fees I add to the project.</p>
+          <p>I handle the setup and help you choose a provider that is affordable, reputable, and right for the site. Since that money does not go to me, there is no reason for me to steer you toward a more expensive option.</p>
+        </div>
+        <div class="hosting-box fade">
+          <h3>And if you don't want to think about it?</h3>
+          <p>That's fine too. I can handle the setup, keep track of the technical side, and be the person you contact when something needs attention.</p>
+          <div class="mini-points">
+            <div class="mini-point"><strong>Setup</strong><br>Domain + hosting</div>
+            <div class="mini-point"><strong>Support</strong><br>Fixes when needed</div>
+            <div class="mini-point"><strong>Retainer</strong><br>Ongoing help, if wanted</div>
+            <div class="mini-point"><strong>Transparent</strong><br>No hosting markup</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story" id="about">
+      <div class="container story-grid">
+        <figure class="portrait-frame fade"><img src="" data-mdp-image="jacob-photo" alt="Jacob M. Moss, owner of Madison Design Projects" /></figure>
+        <div class="story-copy fade">
+          <span class="eyebrow">The person behind it</span>
+          <h2>Hi, I'm Jacob.</h2>
+          <p>I'm Jacob Moss, the owner of Madison Design Projects. I'm 26, and I've spent most of my life around technology — learning how things work, building things, and figuring out how to make them useful.</p>
+          <p>That is really what I care about with websites. I don't want to hand a business a pretty page and call it a day. I want to understand the business well enough to build something that actually helps: a place where customers can find answers, see what you offer, and know what to do next.</p>
+          <p>Madison Design Projects is my way of doing that for local businesses. I keep the process simple, the price straightforward, and the work personal. I find a business I think would be interesting to build for, I make something I believe could help, and I put it in front of the owner. From there, we make it right together.</p>
+          <p>I want to grow this into something bigger over time. But even as it grows, I want the same thing to stay true: there is a real person behind the work who cares about making something useful for your business.</p>
+          <div class="signature">— Jacob M. Moss, Owner</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section retainer">
+      <div class="container retainer-grid">
+        <div class="fade">
+          <span class="eyebrow">After launch</span>
+          <h2 style="color:#f7f2e8">You don't have to disappear after the handoff.</h2>
+          <p>A retainer simply means you keep me available when you need me. It is completely optional — you can always contact me later without one — but some business owners like knowing there is a person they can call when the website needs attention.</p>
+        </div>
+        <ul class="retainer-list fade">
+          <li>Update your hours, services, prices, text, or photos</li>
+          <li>Fix a problem when something on the site stops working</li>
+          <li>Add a new page or section when the business changes</li>
+          <li>Have one person to call when you need website help</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy fade">
+          <span class="eyebrow">Let's make something</span>
+          <h2>Tell me about your business.</h2>
+          <p>You don't need a polished brief. Tell me what you do, what you have now, and what you wish your website did better.</p>
+          <p><strong>I'll take it from there.</strong></p>
+          <p style="margin-top:35px;color:var(--muted);font-size:.9rem">You can also email me directly at <a href="mailto:madisondesignprojects@gmail.com" style="color:var(--green);font-weight:700">madisondesignprojects@gmail.com</a></p>
+        </div>
+        <form id="contactForm" class="fade" action="https://formsubmit.co/ajax/madisondesignprojects@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New website inquiry — Madison Design Projects">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+          <div class="form-row">
+            <div class="field"><label for="name">Name</label><input id="name" name="name" required placeholder="Your name"></div>
+            <div class="field"><label for="business">Business</label><input id="business" name="business" placeholder
