@@ -1,0 +1,126 @@
+="Business name"></div>
+          </div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" name="email" required placeholder="you@example.com"></div>
+          <div class="field"><label for="message">What are you thinking?</label><textarea id="message" name="message" required placeholder="Tell me a little about the business, the current website, or what you'd like to build."></textarea></div>
+          <div class="recipient-box" aria-label="Message recipient">
+            <span class="recipient-label">Sending to</span>
+            <span class="recipient-email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>madisondesignprojects@gmail.com</span>
+          </div>
+          <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+          <div class="form-foot">
+            <small>Your message stays right here — no email app or new page.</small>
+            <button class="button button-primary" type="submit">Send message →</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">Madison Design Projects</div>
+        <small>Websites for local businesses.</small>
+      </div>
+      <small>© <span id="year"></span> Madison Design Projects · Madison, Wisconsin</small>
+    </div>
+  </footer>
+
+  <script>
+    // CHANGE THIS ONE VALUE to the email address you want contact requests sent to.
+    const CONTACT_EMAIL = "madisondesignprojects@gmail.com";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function toggleMobileNav(button){
+      const nav = document.getElementById("mobileNav");
+      const open = nav.classList.toggle("mobile-open");
+      button.setAttribute("aria-expanded", String(open));
+      button.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      button.textContent = open ? "×" : "☰";
+    }
+
+    document.querySelectorAll('#mobileNav a').forEach((link) => {
+      link.addEventListener('click', () => {
+        const nav = document.getElementById('mobileNav');
+        const button = document.querySelector('.menu-button');
+        nav.classList.remove('mobile-open');
+        button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-label', 'Open menu');
+        button.textContent = '☰';
+      });
+    });
+
+    const contactForm = document.getElementById("contactForm");
+    const formStatus = document.getElementById("formStatus");
+
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const data = new FormData(contactForm);
+
+      formStatus.className = "form-status";
+      formStatus.textContent = "Sending your message…";
+      submitButton.disabled = true;
+      submitButton.style.opacity = ".7";
+      submitButton.textContent = "Sending…";
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: data
+        });
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok || result.success === false) {
+          throw new Error(result.message || "The message could not be sent.");
+        }
+
+        contactForm.reset();
+        formStatus.className = "form-status success";
+        formStatus.textContent = "Thanks — your message was sent. I'll get back to you soon.";
+      } catch (error) {
+        formStatus.className = "form-status error";
+        formStatus.textContent = "Something went wrong while sending. Please email madisondesignprojects@gmail.com directly.";
+      } finally {
+        submitButton.disabled = false;
+        submitButton.style.opacity = "1";
+        submitButton.textContent = "Send message →";
+      }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: .12});
+
+    document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+  </script>
+
+<script>
+(async () => {
+  const images = document.querySelectorAll('[data-mdp-image]');
+  await Promise.all([...images].map(async (img) => {
+    const key = img.getAttribute('data-mdp-image');
+    const file = key === 'logo-mark' ? 'assets/logo-mark.b64'
+      : key === 'logo-wordmark' ? 'assets/logo-wordmark.b64'
+      : 'assets/jacob-photo.b64';
+    const mime = key === 'jacob-photo' ? 'image/webp' : 'image/webp';
+    try {
+      const r = await fetch(file, { cache: 'force-cache' });
+      if (!r.ok) throw new Error('image fetch failed');
+      const b64 = (await r.text()).trim();
+      img.src = "data:" + mime + ";base64," + b64;
+    } catch (e) {
+      // Keep the layout intact if an image cannot be loaded.
+    }
+  }));
+})();
+</script>
+</body>
+</html>
