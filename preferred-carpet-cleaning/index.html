@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1e4b4a">
+<meta name="description" content="Preferred Carpet Cleaning — carpet and upholstery cleaning in Cottage Grove, Wisconsin. Call 608-839-1565.">
+<title>Preferred Carpet Cleaning | Cottage Grove, WI</title>
+<style>
+:root{
+  --navy:#173d3d;--teal:#1e5a58;--aqua:#dceeed;--cream:#fbfaf6;--paper:#f2eee4;
+  --ink:#20302f;--muted:#5f6d6a;--gold:#c69b4b;--line:#d9d5ca;--white:#fff;
+  --shadow:0 18px 50px rgba(25,48,46,.10);--radius:22px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:17px/1.65 Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.container{width:min(1120px,calc(100% - 36px));margin:auto}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.13;margin:0 0 18px}
+h1{font-size:clamp(2.8rem,6vw,5.5rem);letter-spacing:-.045em}
+h2{font-size:clamp(2.1rem,4vw,3.5rem);letter-spacing:-.035em}
+h3{font-size:1.35rem}
+p{margin:0 0 18px}.eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--teal)}
+.topbar{background:var(--navy);color:#fff;font-size:.9rem}
+.topbar .inner{min-height:42px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.topbar a{font-weight:800}.topbar .hours{opacity:.82}
+.nav{position:sticky;top:0;z-index:20;background:rgba(251,250,246,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px}.mark{width:48px;height:48px;border-radius:12px;background:var(--teal);display:grid;place-items:center;color:#fff;font-family:Georgia,serif;font-size:1.35rem;font-weight:700}
+.brand-text strong{display:block;font-family:Georgia,serif;font-size:1.08rem;letter-spacing:-.01em}.brand-text span{display:block;color:var(--muted);font-size:.73rem;letter-spacing:.08em;text-transform:uppercase}
+.links{display:flex;align-items:center;gap:28px;font-size:.94rem;font-weight:700;color:#42504e}.links a:hover{color:var(--teal)}
+.phone-btn,.primary{background:var(--teal);color:#fff;padding:12px 18px;border-radius:999px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:inherit}
+.phone-btn:hover,.primary:hover{background:var(--navy)}
+.menu{display:none;background:transparent;border:1px solid var(--line);border-radius:12px;width:44px;height:44px;font-size:1.4rem;color:var(--teal)}
+.hero{background:linear-gradient(135deg,#eef4f1 0%,#fbfaf6 55%,#eee8db 100%);border-bottom:1px solid var(--line);padding:76px 0 86px}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:70px;align-items:center}
+.hero p{font-size:1.16rem;color:#4f5e5b;max-width:660px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 28px}
+.button{display:inline-flex;align-items:center;justify-content:center;padding:14px 21px;border-radius:999px;font-weight:800}
+.secondary{border:1px solid #bfc9c4;background:#fff;color:var(--teal)}
+.quick{display:flex;flex-wrap:wrap;gap:26px;color:var(--muted);font-size:.9rem}
+.quick strong{display:block;color:var(--ink);font-size:1rem}
+.hero-art{border-radius:30px;overflow:hidden;box-shadow:var(--shadow);background:#d5dfdb;position:relative;min-height:470px}
+.hero-art img{width:100%;height:100%;min-height:470px;object-fit:cover}
+.hero-art:after{content:"";position:absolute;inset:auto 0 0 0;height:35%;background:linear-gradient(transparent,rgba(16,44,42,.62))}
+.art-label{position:absolute;z-index:2;bottom:22px;left:24px;color:#fff;font-weight:800;font-size:.88rem;letter-spacing:.04em}
+.section{padding:105px 0}.paper{background:var(--paper)}
+.intro{display:grid;grid-template-columns:.7fr 1.3fr;gap:75px}
+.lead{font-size:1.1rem;color:#52615e}
+.callout{margin-top:28px;border-left:4px solid var(--gold);background:#fff;padding:20px 22px;border-radius:0 15px 15px 0;box-shadow:0 8px 25px rgba(35,49,45,.05)}
+.services-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:42px}
+.services-head p{max-width:580px;color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 30px rgba(35,49,45,.045)}
+.card-image{height:185px;overflow:hidden;background:var(--aqua)}
+.card-image img{width:100%;height:100%;object-fit:cover}
+.icon-art{height:100%;display:grid;place-items:center;font-size:3.5rem;color:var(--teal);background:radial-gradient(circle at 35% 35%,#fff 0 12%,transparent 13%),linear-gradient(135deg,#dceeed,#f4eee0)}
+.card-body{padding:27px}.card-body p{color:var(--muted);font-size:.95rem}
+.card-body a{color:var(--teal);font-weight:800}
+.process{background:var(--navy);color:#fff}
+.process .eyebrow{color:#e3c16f}.process h2{max-width:720px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:45px}
+.step{border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:25px;background:rgba(255,255,255,.045)}
+.num{font-family:Georgia,serif;color:#dfbd69;font-size:1rem;font-weight:700}.step h3{margin:18px 0 10px;color:#fff}.step p{color:rgba(255,255,255,.72);font-size:.92rem;margin:0}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.info-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px;box-shadow:0 10px 30px rgba(35,49,45,.05)}
+.info-row{display:flex;gap:16px;padding:17px 0;border-top:1px solid var(--line)}.info-row:first-child{border-top:0;padding-top:0}
+.info-row strong{min-width:125px}.info-row span,.info-row a{color:var(--muted)}
+.notice{margin-top:22px;font-size:.86rem;color:var(--muted);background:#f4f0e7;padding:14px 16px;border-radius:12px}
+.reviewless{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}
+.review-box{border:1px solid var(--line);background:#fff;border-radius:var(--radius);padding:35px}
+.review-box .quote{font-family:Georgia,serif;font-size:1.35rem;color:var(--teal);margin-bottom:10px}
+.contact{background:#e3efed}
+.contact-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:65px;align-items:start}
+.contact-copy p{color:#53625f;font-size:1.06rem}.contact-details{margin-top:30px}
+.contact-detail{display:flex;gap:14px;align-items:flex-start;margin:15px 0}.contact-detail strong{display:block}.contact-detail span{color:var(--muted)}
+form{background:#fff;border:1px solid #cbd9d6;border-radius:var(--radius);padding:32px;box-shadow:var(--shadow)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{margin-bottom:16px}
+label{display:block;font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px;color:#52605d}
+input,textarea,select{width:100%;padding:13px 14px;border:1px solid #cdd4d0;border-radius:12px;background:#fffefb;color:var(--ink);font:inherit;outline:none}
+input:focus,textarea:focus,select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(30,90,88,.1)}
+textarea{min-height:135px;resize:vertical}
+.recipient{display:flex;justify-content:space-between;gap:15px;align-items:center;background:#f2f7f5;border:1px solid #d5e2df;border-radius:12px;padding:13px 14px;margin-top:2px}
+.recipient small{color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:800}.recipient strong{color:var(--teal);font-size:.9rem}
+.status{min-height:25px;margin:13px 0 0;font-size:.9rem}.success{color:var(--teal);font-weight:800}.error{color:#a04c37;font-weight:800}
+.form-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:8px}.form-foot small{color:var(--muted)}
+.footer{background:#122d2d;color:rgba(255,255,255,.68);padding:34px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer strong{color:#fff;font-family:Georgia,serif}
+.fade{opacity:0;transform:translateY(12px);transition:.7s ease}.fade.show{opacity:1;transform:none}
+@media(max-width:850px){
+ .container{width:min(100% - 30px,1120px)}.topbar .hours{display:none}
+ .links{display:none;position:absolute;left:0;right:0;top:76px;background:#fbfaf6;border-bottom:1px solid var(--line);padding:10px 15px 16px;flex-direction:column;align-items:stretch;gap:0;box-shadow:0 18px 30px rgba(0,0,0,.08)}
+ .links.open{display:flex}.links a{padding:12px 8px}.links .phone-btn{text-align:center;margin-top:6px}.menu{display:block}
+ .hero{padding:58px 0 65px}.hero-grid,.intro,.reviewless,.contact-grid{grid-template-columns:1fr;gap:38px}
+ .hero-art,.hero-art img{min-height:360px}.section{padding:75px 0}.cards{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.info-grid{grid-template-columns:1fr}
+ .services-head{display:block}.services-head p{margin-top:12px}.footer-inner{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:560px){
+ h1{font-size:2.7rem}.hero-actions .button{width:100%}.quick{gap:16px 22px}.steps{grid-template-columns:1fr}
+ .row{grid-template-columns:1fr}form{padding:23px}.recipient{align-items:flex-start;flex-direction:column}.form-foot{align-items:stretch;flex-direction:column}.form-foot .primary{width:100%}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container inner"><div>Preferred Carpet Cleaning · Cottage Grove, Wisconsin</div><div class="hours">Listed hours: Mon–Sat, 8 AM–6 PM · <a href="tel:+16088391565">(608) 839-1565</a></div></div></div>
+<header class="nav">
+ <div class="container nav-inner">
+  <a class="brand" href="#top"><div class="mark">P</div><div class="brand-text"><strong>Preferred Carpet Cleaning</strong><span>Cottage Grove, WI</span></div></a>
+  <nav class="links" id="links"><a href="#services">Services</a><a href="#process">Our Approach</a><a href="#contact">Contact</a><a class="phone-btn" href="tel:+16088391565">Call (608) 839-1565</a></nav>
+  <button class="menu" type="button" aria-label="Menu" aria-expanded="false" onclick="toggleMenu(this)">☰</button>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="container hero-grid">
+  <div class="fade">
+   <div class="eyebrow">Carpet & upholstery cleaning</div>
+   <h1>A cleaner home starts with the floors.</h1>
+   <p>Professional carpet cleaning in Cottage Grove, Wisconsin, with a simple goal: leave your carpets and fabric looking cared for, refreshed and ready to enjoy again.</p>
+   <div class="hero-actions"><a class="button primary" href="tel:+16088391565">Call for an appointment</a><a class="button secondary" href="#contact">Request information</a></div>
+   <div class="quick"><div><strong>Local service</strong><span>Cottage Grove, WI</span></div><div><strong>Carpet care</strong><span>Deep cleaning & stain care</span></div><div><strong>Upholstery</strong><span>Fabric cleaning</span></div></div>
+  </div>
+  <div class="hero-art fade">
+   <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85" alt="Bright, clean carpeted living room">
+   <div class="art-label">A fresh, comfortable room feels different.</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="services">
+ <div class="container">
+  <div class="services-head fade"><div><div class="eyebrow">Services</div><h2 style="margin-top:10px">Care for the places you live and work.</h2></div><p>Public listings identify Preferred Carpet Cleaning as a carpet and upholstery cleaning business in Cottage Grove. The services below are presented around those verified categories without inventing specialty services that are not publicly documented.</p></div>
+  <div class="cards">
+   <article class="card fade"><div class="card-image"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85" alt="Clean carpeted living room"></div><div class="card-body"><h3>Carpet Cleaning</h3><p>Give worn, dull or heavily traveled carpet a professional cleaning and a fresh start.</p><a href="#contact">Ask about carpet cleaning →</a></div></article>
+   <article class="card fade"><div class="card-image"><div class="icon-art">▦</div></div><div class="card-body"><h3>Upholstery Cleaning</h3><p>Professional care for upholstered furniture and fabric surfaces that need more than a quick vacuum.</p><a href="#contact">Ask about upholstery →</a></div></article>
+   <article class="card fade"><div class="card-image"><div class="icon-art">✦</div></div><div class="card-body"><h3>Fabric & Rug Care</h3><p>Public business listings also place Preferred Carpet Cleaning in fabric treatment and oriental rug cleaning categories. Ask what is appropriate for your material.</p><a href="#contact">Ask about fabric care →</a></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="section paper" id="process">
+ <div class="container">
+  <div class="eyebrow">A straightforward experience</div><h2 style="margin-top:10px;max-width:720px">No complicated process. Just good communication and careful cleaning.</h2>
+  <div class="steps">
+   <div class="step fade"><div class="num">01</div><h3>Tell us what needs attention.</h3><p>Call or send a message and explain the rooms, carpet or furniture you want cleaned.</p></div>
+   <div class="step fade"><div class="num">02</div><h3>Discuss the job.</h3><p>Ask questions about the material, stains, timing and what kind of cleaning makes sense.</p></div>
+   <div class="step fade"><div class="num">03</div><h3>Cleaning day.</h3><p>The goal is a thorough, professional cleaning without making the experience harder than it needs to be.</p></div>
+   <div class="step fade"><div class="num">04</div><h3>Enjoy the difference.</h3><p>Cleaner carpet and upholstery can make a room feel noticeably fresher and more comfortable.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container info-grid">
+  <div class="info-card fade">
+   <div class="eyebrow">Business information</div><h2 style="font-size:2.4rem;margin-top:10px">Easy to reach. Easy to talk to.</h2>
+   <div class="info-row"><strong>Phone</strong><a href="tel:+16088391565">(608) 839-1565</a></div>
+   <div class="info-row"><strong>Address</strong><span>360 Progress Dr #205<br>Cottage Grove, WI 53527</span></div>
+   <div class="info-row"><strong>Owner</strong><span>Scott Hosking</span></div>
+   <div class="info-row"><strong>Hours</strong><span>Mon–Sat, 8 AM–6 PM<br><small>Please call to confirm current hours.</small></span></div>
+   <div class="notice">Business details above are based on public listings found for Preferred Carpet Cleaning. If an address, owner information or hours have changed, the owner should update them before launch.</div>
+  </div>
+  <div class="info-card fade">
+   <div class="eyebrow">Service area</div><h2 style="font-size:2.4rem;margin-top:10px">Cottage Grove & nearby communities.</h2>
+   <p style="color:var(--muted)">Public listings associate Preferred Carpet Cleaning with Cottage Grove and also surface the business in nearby-area carpet-cleaning searches. If you have a specific town or property, the easiest way to confirm service availability is to call.</p>
+   <a class="button primary" href="tel:+16088391565">Call to confirm service area</a>
+  </div>
+ </div>
+</section>
+
+<section class="section paper">
+ <div class="container reviewless">
+  <div class="fade"><div class="eyebrow">Customer feedback</div><h2 style="margin-top:10px">A place for real reviews — when you have them.</h2><p style="color:var(--muted)">I did not find a reliable public collection of customer reviews for Preferred Carpet Cleaning during this research, so I did not invent testimonials. Once the business has reviews it wants featured, this section can become a strong proof point.</p></div>
+  <div class="review-box fade"><div class="quote">“Your customers should hear from your customers.”</div><p style="color:var(--muted);margin:0">The design is ready for verified Google, Yelp or other customer feedback to be added later.</p></div>
+ </div>
+</section>
+
+<section class="section contact" id="contact">
+ <div class="container contact-grid">
+  <div class="contact-copy fade">
+   <div class="eyebrow">Contact Preferred Carpet Cleaning</div><h2 style="margin-top:10px">Have a question or want to schedule a cleaning?</h2>
+   <p>Use the form and your message will be sent without opening another email program. If you prefer to talk, call directly.</p>
+   <div class="contact-details">
+    <div class="contact-detail"><div>☎</div><div><strong>Call</strong><span><a href="tel:+16088391565">(608) 839-1565</a></span></div></div>
+    <div class="contact-detail"><div>⌂</div><div><strong>Located in Cottage Grove</strong><span>360 Progress Dr #205, Cottage Grove, WI 53527</span></div></div>
+    <div class="contact-detail"><div>◷</div><div><strong>Listed hours</strong><span>Monday–Saturday, 8 AM–6 PM</span></div></div>
+   </div>
+  </div>
+  <form id="contactForm" action="https://formsubmit.co/ajax/6088391565@preferredcarpetcleaning.com" method="POST" class="fade">
+   <input type="hidden" name="_subject" value="New website inquiry — Preferred Carpet Cleaning">
+   <input type="hidden" name="_template" value="table">
+   <input type="hidden" name="_captcha" value="false">
+   <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+   <div class="row"><div class="field"><label for="name">Your name</label><input id="name" name="name" required placeholder="First and last name"></div><div class="field"><label for="phone">Phone</label><input id="phone" name="phone" placeholder="(608) 555-1234"></div></div>
+   <div class="field"><label for="email">Email</label><input id="email" type="email" name="email" required placeholder="you@example.com"></div>
+   <div class="field"><label for="service">What do you need?</label><select id="service" name="service"><option value="">Select a service</option><option>Carpet cleaning</option><option>Upholstery cleaning</option><option>Fabric or rug care</option><option>Not sure — I have a question</option></select></div>
+   <div class="field"><label for="message">Message</label><textarea id="message" name="message" required placeholder="Tell us what you would like cleaned, where you are located, and any questions you have."></textarea></div>
+   <div class="recipient"><small>Message will be sent to</small><strong>Preferred Carpet Cleaning</strong></div>
+   <div id="status" class="status" role="status" aria-live="polite"></div>
+   <div class="form-foot"><small>No email app will open.</small><button class="primary" type="submit">Send message →</button></div>
+  </form>
+ </div>
+</section>
+</main>
+<footer class="footer"><div class="container footer-inner"><div><strong>Preferred Carpet Cleaning</strong><br><small>Cottage Grove, Wisconsin</small></div><small>© <span id="year"></span> Preferred Carpet Cleaning · <a href="tel:+16088391565">(608) 839-1565</a></small></div></footer>
+
+<script>
+function toggleMenu(btn){
+ const nav=document.getElementById('links');const open=nav.classList.toggle('open');
+ btn.setAttribute('aria-expanded',String(open));btn.textContent=open?'×':'☰';
+}
+document.querySelectorAll('#links a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('links').classList.remove('open');const b=document.querySelector('.menu');b.setAttribute('aria-expanded','false');b.textContent='☰'}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const form=document.getElementById('contactForm'),status=document.getElementById('status');
+form.addEventListener('submit',async e=>{
+ e.preventDefault();const button=form.querySelector('button');status.className='status';status.textContent='Sending your message…';button.disabled=true;button.style.opacity='.65';
+ try{
+  const r=await fetch(form.action,{method:'POST',headers:{Accept:'application/json'},body:new FormData(form)});
+  const data=await r.json().catch(()=>({}));if(!r.ok||data.success===false)throw new Error();
+  form.reset();status.className='status success';status.textContent='Thank you. Your message was sent successfully.';
+ }catch(err){status.className='status error';status.textContent='We could not send the message right now. Please call (608) 839-1565.'}
+ finally{button.disabled=false;button.style.opacity='1';}
+});
+const io=new IntersectionObserver(entries=>entries.forEach(x=>{if(x.isIntersecting){x.target.classList.add('show');io.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll('.fade').forEach(x=>io.observe(x));
+</script>
+</body>
+</html>
