@@ -1,4 +1,585 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Madison Design Projects</title><meta name="description" content="Madison Design Projects builds thoughtful, affordable websites for local businesses."><style>body{margin:0;background:#fcfaf5;color:#24312d;font:16px system-ui,sans-serif;display:grid;place-items:center;min-height:100vh}.loading{color:#6d7772}</style></head><body><div class="loading">Loading Madison Design Projects…</div><script>
-(async()=>{try{const parts=await Promise.all([1,2,3,4,5].map(n=>fetch("site-part-"+n+".txt",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("part "+n);return r.text()})));document.open();document.write(parts.join(""));document.close();}catch(e){document.body.innerHTML="<main style='padding:40px;font-family:system-ui'><h1>Madison Design Projects</h1><p>The site could not load. Please refresh.</p></main>";console.error(e)}})();
-</script></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Madison Design Projects builds thoughtful, affordable websites for local businesses. $400 flat, with a 3–5 day turnaround." />
+  <meta name="theme-color" content="#18352e" />
+  <title>Madison Design Projects — Websites for Local Businesses</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#24312d;
+      --green:#24453b;
+      --green-2:#26483e;
+      --paper:#f2ece0;
+      --cream:#fcfaf5;
+      --line:#d8cebd;
+      --muted:#6d7772;
+      --rust:#b36b46;
+      --gold:#c8a15a;
+      --blue:#7e9696;
+      --shadow:0 20px 60px rgba(35,49,45,.11);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--cream);
+      font-family:"DM Sans",system-ui,sans-serif;
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1120px, calc(100% - 40px));margin:0 auto}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+      color:var(--green);
+    }
+    .eyebrow::before{content:"";width:24px;height:1px;background:currentColor}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{font-family:"Libre Baskerville",Georgia,serif;line-height:1.12}
+    h1{font-size:clamp(3.1rem,7vw,6.3rem);letter-spacing:-.055em;margin-bottom:25px}
+    h2{font-size:clamp(2.15rem,4.5vw,4rem);letter-spacing:-.04em}
+    h3{font-size:1.25rem}
+    .nav{
+      position:sticky;top:0;z-index:20;
+      background:rgba(251,248,241,.90);backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(217,208,193,.8);
+    }
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:-.02em}
+    .brand-mark{width:46px;height:46px;object-fit:contain;flex:0 0 46px}
+    .brand span{font-size:.98rem}
+    .nav-links{display:flex;gap:28px;align-items:center;font-size:.92rem}
+    .nav-links a{color:#45514d}
+    .nav-links a:hover{color:var(--green)}
+    .nav-cta{
+      padding:10px 17px;border:1px solid var(--green);border-radius:999px;
+      color:var(--green)!important;font-weight:700;
+    }
+    .hero{
+      position:relative;overflow:hidden;
+      padding:86px 0 95px;
+      background:
+        radial-gradient(circle at 88% 20%, rgba(200,161,90,.20), transparent 25%),
+        radial-gradient(circle at 8% 85%, rgba(126,150,150,.14), transparent 24%),
+        var(--paper);
+      border-bottom:1px solid var(--line);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:70px;align-items:center}
+    .hero-copy p{max-width:680px;font-size:1.14rem;color:#56625e}
+    .accent{color:var(--rust)}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:34px}
+    .button{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      border-radius:999px;padding:14px 21px;font-weight:700;
+      transition:.2s ease;cursor:pointer;border:0;font:inherit;
+    }
+    .button-primary{background:var(--green);color:#fff}
+    .button-primary:hover{background:var(--green-2);transform:translateY(-2px)}
+    .button-secondary{border:1px solid var(--line);background:rgba(255,255,255,.45);color:var(--ink)}
+    .button-secondary:hover{border-color:#a9a093;transform:translateY(-2px)}
+    .hero-note{display:flex;gap:25px;margin-top:32px;flex-wrap:wrap}
+    .hero-note strong{display:block;font-size:1.05rem}
+    .hero-note span{font-size:.83rem;color:var(--muted)}
+    .logo-card{
+      position:relative;background:#162521;border-radius:30px;padding:35px;
+      box-shadow:var(--shadow);transform:rotate(1deg);
+      overflow:hidden;
+    }
+    .logo-card::before{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(circle at 75% 15%,rgba(200,161,90,.23),transparent 32%),
+                 radial-gradient(circle at 15% 85%,rgba(126,150,150,.18),transparent 30%);
+      pointer-events:none;
+    }
+    .logo-lockup{position:relative;z-index:1;padding:8px 0 24px;text-align:center}
+    .logo-lockup img{width:min(100%,470px);margin:auto;filter:drop-shadow(0 12px 24px rgba(0,0,0,.18))}
+    .hero-wordmark{margin-top:-2px;color:#f7f2e8}
+    .hero-wordmark strong{display:block;font-family:"Libre Baskerville",Georgia,serif;font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:.08em;line-height:.95}
+    .hero-wordmark span{display:block;margin-top:12px;font-size:.79rem;letter-spacing:.28em;color:#d9cdbd}
+    .logo-caption{
+      position:absolute;left:28px;bottom:20px;color:rgba(255,255,255,.62);
+      font-size:.7rem;letter-spacing:.13em;text-transform:uppercase
+    }
+    .section{padding:110px 0}
+    .section-tight{padding:85px 0}
+    .intro-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:80px;align-items:start}
+    .intro-copy{font-size:1.16rem;color:#4e5a55;max-width:690px}
+    .intro-copy p{margin-bottom:20px}
+    .pullquote{
+      margin:35px 0 0;padding:25px 0 0;border-top:1px solid var(--line);
+      font-family:"Libre Baskerville",Georgia,serif;font-size:1.5rem;line-height:1.45;color:var(--green)
+    }
+    .process{background:var(--green);color:#f7f2e8}
+    .process .eyebrow{color:#e3c788}
+    .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
+    .process-card{
+      border:1px solid rgba(255,255,255,.17);border-radius:var(--radius);padding:30px;
+      background:rgba(255,255,255,.045);
+    }
+    .process-number{font-family:"Libre Baskerville",serif;color:#d9b86c;font-size:1rem}
+    .process-card h3{margin:22px 0 10px;color:#fff}
+    .process-card p{color:rgba(247,242,232,.72);margin:0}
+    .offer{background:#e8e0d1}
+    .offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch}
+    .price-card,.included-card{
+      background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);padding:38px;
+      box-shadow:0 10px 35px rgba(28,40,36,.05)
+    }
+    .price{
+      display:flex;align-items:baseline;gap:10px;margin:18px 0 20px
+    }
+    .price strong{font-family:"Libre Baskerville",serif;font-size:4.1rem;letter-spacing:-.06em;color:var(--green)}
+    .price span{color:var(--muted)}
+    .price-card p{color:#58635e}
+    .checks{list-style:none;padding:0;margin:28px 0 0}
+    .checks li{padding:10px 0;border-top:1px solid var(--line);display:flex;gap:11px}
+    .checks li::before{content:"✓";font-weight:700;color:var(--rust)}
+    .note{
+      margin-top:20px;font-size:.88rem;color:var(--muted);padding:15px 17px;
+      border-left:3px solid var(--gold);background:#f1ebdf;border-radius:0 12px 12px 0
+    }
+    .included-card h3{margin-bottom:25px}
+    .included-row{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-top:1px solid var(--line)}
+    .included-row strong{font-size:.95rem}
+    .included-row span{font-size:.9rem;color:var(--muted);text-align:right;max-width:55%}
+    .hosting{
+      padding:100px 0;background:var(--cream);
+    }
+    .hosting-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+    .hosting-copy p{color:#56615d;font-size:1.08rem}
+    .hosting-box{
+      background:var(--paper);border:1px solid var(--line);padding:34px;border-radius:var(--radius)
+    }
+    .hosting-box h3{margin-bottom:10px}
+    .hosting-box p{font-size:.96rem;color:#5c6762}
+    .mini-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+    .mini-point{padding:15px;background:#fff;border:1px solid var(--line);border-radius:14px;font-size:.88rem}
+    .story{background:var(--paper)}
+    .story-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:75px;align-items:center}
+    .portrait-frame{
+      margin:0;min-height:470px;border-radius:28px;overflow:hidden;
+      border:1px solid var(--line);background:#ddd6ca;box-shadow:var(--shadow);
+    }
+    .portrait-frame img{width:100%;height:100%;min-height:470px;object-fit:cover;object-position:center 27%;}
+
+    .story-copy p{color:#56615d;font-size:1.08rem}
+    .signature{font-family:"Libre Baskerville",serif;color:var(--green);font-size:1.05rem;margin-top:25px}
+    .retainer{background:var(--green);color:#f7f2e8}
+    .retainer-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+    .retainer p{color:rgba(247,242,232,.74);font-size:1.05rem}
+    .retainer-list{list-style:none;padding:0;margin:0}
+    .retainer-list li{padding:17px 0;border-bottom:1px solid rgba(255,255,255,.15);display:flex;gap:14px}
+    .retainer-list li::before{content:"+";color:#d9b86c;font-weight:700}
+    .contact{padding:110px 0}
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:75px}
+    .contact-copy p{color:#5b6762;font-size:1.08rem}
+    form{background:var(--paper);border:1px solid var(--line);padding:35px;border-radius:var(--radius)}
+    .field{margin-bottom:17px}
+    label{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:7px;color:#4e5b56}
+    input,textarea,select{
+      width:100%;border:1px solid #cec4b4;background:#fffdf8;border-radius:12px;
+      padding:13px 14px;font:inherit;color:var(--ink);outline:none
+    }
+    input:focus,textarea:focus,select:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(24,53,46,.08)}
+    textarea{min-height:130px;resize:vertical}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+     .recipient-box{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      margin-top:18px;padding:13px 15px;border:1px solid var(--line);
+      background:rgba(255,255,255,.58);border-radius:12px;color:#59645f;
+    }
+    .recipient-label{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#6c756f}
+    .recipient-email{display:flex;align-items:center;gap:8px;color:var(--green);font-size:.9rem;font-weight:700;white-space:nowrap}
+    .recipient-email svg{width:15px;height:15px;flex:0 0 15px}
+    .form-status{margin-top:14px;font-size:.9rem;line-height:1.45;min-height:1.3em;color:var(--muted)}
+    .form-status.success{color:var(--green);font-weight:600}
+    .form-status.error{color:#985036;font-weight:600}
+    .form-foot{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:20px}
+    .form-foot small{color:var(--muted)}
+    .footer{background:#14211e;color:rgba(255,255,255,.65);padding:35px 0}
+    .footer-inner{display:flex;justify-content:space-between;gap:30px;align-items:center}
+    .footer-brand{color:#fff;font-family:"Libre Baskerville",serif}
+    .footer small{font-size:.78rem}
+    .fade{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+    .fade.visible{opacity:1;transform:none}
+    .menu-button{display:none;background:none;border:0;font-size:1.4rem;line-height:1;cursor:pointer;color:var(--green)}
+    body{overflow-x:hidden}
+
+    @media(max-width:850px){
+      .container{width:min(100% - 32px,1120px)}
+      .nav-inner{height:70px}
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:70px;left:0;right:0;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:8px 16px 16px;
+        background:rgba(251,248,241,.98);
+        border-bottom:1px solid var(--line);
+        box-shadow:0 16px 30px rgba(28,40,36,.08);
+      }
+      .nav-links.mobile-open{display:flex}
+      .nav-links a{padding:12px 8px}
+      .nav-links .nav-cta{margin:6px 0 0;text-align:center}
+      .menu-button{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%}
+      .hero-grid,.intro-grid,.offer-grid,.hosting-grid,.story-grid,.retainer-grid,.contact-grid{grid-template-columns:1fr;gap:42px}
+      .hero{padding:56px 0 72px}
+      .hero-copy p{font-size:1.05rem}
+      .hero-actions{margin-top:28px}
+      .logo-card{max-width:620px;width:100%;margin:auto;padding:28px 22px 48px;transform:none;border-radius:24px}
+      .hero-wordmark strong{font-size:2.05rem}
+      .hero-wordmark span{letter-spacing:.18em;font-size:.66rem}
+      .logo-caption{left:22px;bottom:16px;font-size:.64rem}
+      .process-grid{grid-template-columns:1fr}
+      .portrait-frame{min-height:390px}
+      .portrait-frame img{min-height:390px;object-position:center 25%}
+      .section,.contact{padding:76px 0}
+      .hosting{padding:78px 0}
+      .footer-inner{flex-direction:column;align-items:flex-start}
+      .included-row{flex-direction:column;gap:7px}
+      .included-row span{max-width:none;text-align:left}
+
+    }
+
+    @media(max-width:540px){
+      .container{width:min(100% - 28px,1120px)}
+      .brand{gap:8px}
+      .brand-mark{width:40px;height:40px;flex-basis:40px}
+      .brand span{font-size:.88rem}
+      h1{font-size:clamp(2.55rem,12vw,3.05rem);letter-spacing:-.05em}
+      h2{font-size:clamp(2rem,10vw,3rem)}
+      .hero-note{gap:18px 22px}
+      .hero-actions .button{width:100%}
+      .price-card,.included-card{padding:28px 24px}
+      .price strong{font-size:3.25rem}
+      .form-row{grid-template-columns:1fr}
+      form{padding:24px}
+      .form-foot{align-items:stretch;flex-direction:column}
+      .form-foot .button{width:100%}
+      .mini-points{grid-template-columns:1fr}
+      .story-grid,.contact-grid{gap:34px}
+      .portrait-frame,.portrait-frame img{min-height:340px}
+      .retainer-list li{padding:15px 0}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Madison Design Projects home">
+        <img class="brand-mark" src="" data-mdp-image="logo-mark" alt="" />
+        <span>Madison Design Projects</span>
+      </a>
+      <nav class="nav-links" id="mobileNav" aria-label="Primary">
+        <a href="#approach">Approach</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="#contact">Let's talk</a>
+      </nav>
+      <button class="menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav" type="button" onclick="toggleMobileNav(this)">☰</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy fade">
+          <span class="eyebrow">Websites for local businesses</span>
+          <h1>A good website should <span class="accent">do something.</span></h1>
+          <p>I build straightforward, thoughtful websites that help local businesses explain what they do, answer the questions customers have, and make it easier for the right people to get in touch.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Talk about your site →</a>
+            <a class="button button-secondary" href="#pricing">See the $400 plan</a>
+          </div>
+          <div class="hero-note">
+            <div><strong>$400 flat</strong><span>for the website build</span></div>
+            <div><strong>3–5 days</strong><span>typical launch window</span></div>
+            <div><strong>30–60 min</strong><span>to get started</span></div>
+          </div>
+        </div>
+        <div class="logo-card fade">
+          <div class="logo-lockup">
+            <img src="" data-mdp-image="logo-wordmark" alt="Madison skyline illustration" />
+            <div class="hero-wordmark">
+              <strong>MADISON</strong>
+              <span>DESIGN PROJECTS</span>
+            </div>
+          </div>
+          <div class="logo-caption">Built in Madison, Wisconsin</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="approach">
+      <div class="container intro-grid">
+        <div class="fade">
+          <span class="eyebrow">The idea</span>
+          <h2>Your website should fit your business.</h2>
+        </div>
+        <div class="intro-copy fade">
+          <p>A hardware store might need to tell someone which kinds of lumber it carries. A fencing company might need to show the materials and styles it installs. A contractor might simply need a place where a potential customer can see the work, understand the service, and ask for a quote.</p>
+          <p>That's the kind of problem I like solving. I'm not trying to put every business into the same kind of website, or make something simple just for the sake of keeping it simple. The goal is to build a site that actually fits the business behind it — what it offers, how its customers find it, and what those customers need to know. And I do that for a $400 flat price, far below what many agencies and professional web designers charge for comparable work.</p>
+          <div class="pullquote">“Think of it less like buying software, and more like commissioning a piece of work made for your business.”</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process">
+      <div class="container">
+        <span class="eyebrow">How it works</span>
+        <h2 style="max-width:700px;margin-top:18px">Simple from your side.</h2>
+        <div class="process-grid">
+          <article class="process-card fade">
+            <span class="process-number">01</span>
+            <h3>We talk.</h3>
+            <p>Give me 30 minutes to an hour. I'll learn what you do, what customers ask, what you want the site to accomplish, and what you like.</p>
+          </article>
+          <article class="process-card fade">
+            <span class="process-number">02</span>
+            <h3>I make it.</h3>
+            <p>I take that conversation and turn it into a site. In many cases, I'll start with a business I think would be interesting to build for and show you the idea before you buy.</p>
+          </article>
+          <article class="process-card fade">
+            <span class="process-number">03</span>
+            <h3>You make the call.</h3>
+            <p>Look it over, tell me what you want changed, and we'll get the final version ready. If you like it, it becomes yours. If it's not for you, that's okay too.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section offer" id="pricing">
+      <div class="container">
+        <span class="eyebrow">The offer</span>
+        <h2 style="max-width:750px;margin-top:18px">One clear price. No mystery package.</h2>
+        <div class="offer-grid" style="margin-top:48px">
+          <div class="price-card fade">
+            <span class="eyebrow">Website build</span>
+            <div class="price"><strong>$400</strong><span>flat</span></div>
+            <p>A professional, responsive business website built around what your company actually needs — at a straightforward $400 flat price instead of turning a small site into a huge project.</p>
+            <ul class="checks">
+              <li>Custom layout and styling</li>
+              <li>Mobile-friendly design</li>
+              <li>Pages and content we agree on</li>
+              <li>Contact / inquiry functionality</li>
+              <li>Launch and final changes within reason</li>
+              <li>Help getting your domain and hosting set up</li>
+            </ul>
+            <div class="note">Third-party domain and hosting costs are separate. I'll handle the setup and look for sensible, well-reviewed options so you aren't paying me a markup just to keep your site online.</div>
+          </div>
+
+          <div class="included-card fade">
+            <h3>What happens after you say yes?</h3>
+            <div class="included-row"><strong>Domain</strong><span>Your web address, purchased through a third-party registrar at its normal cost.</span></div>
+            <div class="included-row"><strong>Hosting</strong><span>I handle the setup and help you choose an affordable, well-reviewed provider. You pay the provider directly.</span></div>
+            <div class="included-row"><strong>Turnaround</strong><span>Most projects can be ready to launch in roughly 3–5 days once I have what I need.</span></div>
+            <div class="included-row"><strong>Revisions</strong><span>We'll make the reasonable final changes needed to get the site where it should be.</span></div>
+            <div class="included-row"><strong>After launch</strong><span>Need something fixed later? You can reach out as needed, or put me on a simple retainer for ongoing help.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hosting">
+      <div class="container hosting-grid">
+        <div class="hosting-copy fade">
+          <span class="eyebrow">No hosting games</span>
+          <h2>I handle the technical stuff. You keep control.</h2>
+          <p>Your domain and hosting are simply the services that keep your website online. You pay those companies directly, at their normal price — they are not extra fees I add to the project.</p>
+          <p>I handle the setup and help you choose a provider that is affordable, reputable, and right for the site. Since that money does not go to me, there is no reason for me to steer you toward a more expensive option.</p>
+        </div>
+        <div class="hosting-box fade">
+          <h3>And if you don't want to think about it?</h3>
+          <p>That's fine too. I can handle the setup, keep track of the technical side, and be the person you contact when something needs attention.</p>
+          <div class="mini-points">
+            <div class="mini-point"><strong>Setup</strong><br>Domain + hosting</div>
+            <div class="mini-point"><strong>Support</strong><br>Fixes when needed</div>
+            <div class="mini-point"><strong>Retainer</strong><br>Ongoing help, if wanted</div>
+            <div class="mini-point"><strong>Transparent</strong><br>No hosting markup</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story" id="about">
+      <div class="container story-grid">
+        <figure class="portrait-frame fade"><img src="" data-mdp-image="jacob-photo" alt="Jacob M. Moss, owner of Madison Design Projects" /></figure>
+        <div class="story-copy fade">
+          <span class="eyebrow">The person behind it</span>
+          <h2>Hi, I'm Jacob.</h2>
+          <p>I'm Jacob Moss, the owner of Madison Design Projects. I'm 26, and I've spent most of my life around technology — learning how things work, building things, and figuring out how to make them useful.</p>
+          <p>That is really what I care about with websites. I don't want to hand a business a pretty page and call it a day. I want to understand the business well enough to build something that actually helps: a place where customers can find answers, see what you offer, and know what to do next.</p>
+          <p>Madison Design Projects is my way of doing that for local businesses. I keep the process simple, the price straightforward, and the work personal. I find a business I think would be interesting to build for, I make something I believe could help, and I put it in front of the owner. From there, we make it right together.</p>
+          <p>I want to grow this into something bigger over time. But even as it grows, I want the same thing to stay true: there is a real person behind the work who cares about making something useful for your business.</p>
+          <div class="signature">— Jacob M. Moss, Owner</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section retainer">
+      <div class="container retainer-grid">
+        <div class="fade">
+          <span class="eyebrow">After launch</span>
+          <h2 style="color:#f7f2e8">You don't have to disappear after the handoff.</h2>
+          <p>A retainer simply means you keep me available when you need me. It is completely optional — you can always contact me later without one — but some business owners like knowing there is a person they can call when the website needs attention.</p>
+        </div>
+        <ul class="retainer-list fade">
+          <li>Update your hours, services, prices, text, or photos</li>
+          <li>Fix a problem when something on the site stops working</li>
+          <li>Add a new page or section when the business changes</li>
+          <li>Have one person to call when you need website help</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy fade">
+          <span class="eyebrow">Let's make something</span>
+          <h2>Tell me about your business.</h2>
+          <p>You don't need a polished brief. Tell me what you do, what you have now, and what you wish your website did better.</p>
+          <p><strong>I'll take it from there.</strong></p>
+          <p style="margin-top:35px;color:var(--muted);font-size:.9rem">You can also email me directly at <a href="mailto:madisondesignprojects@gmail.com" style="color:var(--green);font-weight:700">madisondesignprojects@gmail.com</a></p>
+        </div>
+        <form id="contactForm" class="fade" action="https://formsubmit.co/ajax/madisondesignprojects@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New website inquiry — Madison Design Projects">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+          <div class="form-row">
+            <div class="field"><label for="name">Name</label><input id="name" name="name" required placeholder="Your name"></div>
+            <div class="field"><label for="business">Business</label><input id="business" name="business" placeholder="Business name"></div>
+          </div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" name="email" required placeholder="you@example.com"></div>
+          <div class="field"><label for="message">What are you thinking?</label><textarea id="message" name="message" required placeholder="Tell me a little about the business, the current website, or what you'd like to build."></textarea></div>
+          <div class="recipient-box" aria-label="Message recipient">
+            <span class="recipient-label">Sending to</span>
+            <span class="recipient-email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>madisondesignprojects@gmail.com</span>
+          </div>
+          <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+          <div class="form-foot">
+            <small>Your message stays right here — no email app or new page.</small>
+            <button class="button button-primary" type="submit">Send message →</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">Madison Design Projects</div>
+        <small>Websites for local businesses.</small>
+      </div>
+      <small>© <span id="year"></span> Madison Design Projects · Madison, Wisconsin</small>
+    </div>
+  </footer>
+
+  <script>
+    // CHANGE THIS ONE VALUE to the email address you want contact requests sent to.
+    const CONTACT_EMAIL = "madisondesignprojects@gmail.com";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function toggleMobileNav(button){
+      const nav = document.getElementById("mobileNav");
+      const open = nav.classList.toggle("mobile-open");
+      button.setAttribute("aria-expanded", String(open));
+      button.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      button.textContent = open ? "×" : "☰";
+    }
+
+    document.querySelectorAll('#mobileNav a').forEach((link) => {
+      link.addEventListener('click', () => {
+        const nav = document.getElementById('mobileNav');
+        const button = document.querySelector('.menu-button');
+        nav.classList.remove('mobile-open');
+        button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-label', 'Open menu');
+        button.textContent = '☰';
+      });
+    });
+
+    const contactForm = document.getElementById("contactForm");
+    const formStatus = document.getElementById("formStatus");
+
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const data = new FormData(contactForm);
+
+      formStatus.className = "form-status";
+      formStatus.textContent = "Sending your message…";
+      submitButton.disabled = true;
+      submitButton.style.opacity = ".7";
+      submitButton.textContent = "Sending…";
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: data
+        });
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok || result.success === false) {
+          throw new Error(result.message || "The message could not be sent.");
+        }
+
+        contactForm.reset();
+        formStatus.className = "form-status success";
+        formStatus.textContent = "Thanks — your message was sent. I'll get back to you soon.";
+      } catch (error) {
+        formStatus.className = "form-status error";
+        formStatus.textContent = "Something went wrong while sending. Please email madisondesignprojects@gmail.com directly.";
+      } finally {
+        submitButton.disabled = false;
+        submitButton.style.opacity = "1";
+        submitButton.textContent = "Send message →";
+      }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: .12});
+
+    document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+  </script>
+
+<script>
+(async () => {
+  const images = document.querySelectorAll('[data-mdp-image]');
+  await Promise.all([...images].map(async (img) => {
+    const key = img.getAttribute('data-mdp-image');
+    const file = key === 'logo-mark' ? 'assets/logo-mark.b64'
+      : key === 'logo-wordmark' ? 'assets/logo-wordmark.b64'
+      : 'assets/jacob-photo.b64';
+    const mime = key === 'jacob-photo' ? 'image/webp' : 'image/webp';
+    try {
+      const r = await fetch(file, { cache: 'force-cache' });
+      if (!r.ok) throw new Error('image fetch failed');
+      const b64 = (await r.text()).trim();
+      img.src = "data:" + mime + ";base64," + b64;
+    } catch (e) {
+      // Keep the layout intact if an image cannot be loaded.
+    }
+  }));
+})();
+</script>
+</body>
+</html>
